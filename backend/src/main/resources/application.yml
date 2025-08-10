@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "gloe"
+  datasource:
+    # Use quotes if the value contains special characters, spaces, or characters that YAML might misinterpret.
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/gloe_db}"
+    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    driverClassName: "org.postgresql.Driver"
+  jpa:
+    hibernate:
+      # JPA provider (like Hibernate) will automatically create or update your database tables based on your Java entity classes
+      # and their annotations — without you manually writing SQL CREATE TABLE statements.
+      ddl-auto: update
+    show-sql: true
